@@ -1,5 +1,6 @@
-
-
-  <% @results.map do |element| %>
-    <li><%= element["twitter_id"] %></li>
+  <% @results.each do |result| %>
+    <li><%= link_to "#{result['first_name']} #{result['last_name']}", "/legislators?id=#{result['bioguide_id']}" %> | <%= result["twitter_id"] %></li>
   <% end %>
+
+
+

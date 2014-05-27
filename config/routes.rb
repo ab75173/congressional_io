@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
 
+  get '/legislators', to: 'members#profile'
+
   resources :sessions, only: [:create]
   resources :users
   resources :members
