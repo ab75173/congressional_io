@@ -1,1 +1,5 @@
-hello world
+
+
+  <% @results.map do |element| %>
+    <li><%= element["twitter_id"] %></li>
+  <% end %>
