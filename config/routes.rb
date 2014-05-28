@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/signout', to: 'sessions#destroy'
 
   get '/legislators', to: 'members#profile'
+  post '/legislators', to: 'favorites#create'
 
   resources :sessions, only: [:create]
   resources :users

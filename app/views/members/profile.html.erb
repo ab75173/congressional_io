@@ -1,6 +1,16 @@
 <h2><%= @results[0]['first_name'] %>
 <%= @results[0]['last_name'] %></h2>
 
+<% if signed_in? %>
+
+  <%= form_tag "/legislators" do %>
+    <%= hidden_field "favorite", "member_id", :value => @results[0]["bioguide_id"] %>
+    <%= hidden_field "favorite", "user_id", :value => current_user.id %>
+    <%= submit_tag 'Favorite' %>
+  <% end %>
+
+<% end %>
+
 <p>Party: <%= @results[0]['party'] %></p>
 <p>Twitter ID: <a href="http://twitter.com/<%= @results[0]['twitter_id'] %>" target="_blank"><%= @results[0]['twitter_id'] %></a></p>
 

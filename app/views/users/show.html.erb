@@ -1,6 +1,16 @@
 <h1><%= @user.name %></h1>
+<%= @user.email %>
 
-<p><%= @user.email %></p>
+<h2>Favorite Members of Congress</h2><hr>
+
+<ul>
+  <% @favorites.each do |favorite| %>
+    <li><%= favorite.member_id %></li>
+  <% end %>
+</ul>
+
+<p>Party: <%= @results[0]['party'] %></p>
+
 
 <p><%= link_to "Edit", edit_user_path(@user) %></p>
 
