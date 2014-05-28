@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :favorites
+  has_many :members, through: :favorites
 
   before_create :create_remember_token
   before_save :normalize_fields

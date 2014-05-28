@@ -1,6 +1,11 @@
-hello world test
+<h2><%= @results[0]['first_name'] %>
+<%= @results[0]['last_name'] %></h2>
 
+<p>Party: <%= @results[0]['party'] %></p>
+<p>Twitter ID: <a href="http://twitter.com/<%= @results[0]['twitter_id'] %>" target="_blank"><%= @results[0]['twitter_id'] %></a></p>
 
-  <% @results.each do |result| %>
-    <li><%= result["twitter_id"] %></li>
-  <% end %>
+<h2>Tweets</h2>
+<% @tweets.each do |tweet| %>
+  <li><%= tweet.text %></li>
+<% end %>
+

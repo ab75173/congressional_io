@@ -32,6 +32,7 @@ gem 'congress'
 gem 'tweetstream'
 gem 'twitter'
 gem 'pry'
+gem 'bourbon'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

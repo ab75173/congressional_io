@@ -7,8 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li> |
+      <li><a href="/members">Members</a></li> |
+      <li><a href="/users">Users</a></li> |
+      <li><%= render 'common/signout' %></li>
+    </ul>
+  </nav>
 
-<%= render 'common/signout' %>
 
 <%= yield %>
 

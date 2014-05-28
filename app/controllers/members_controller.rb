@@ -13,8 +13,15 @@ class MembersController < ApplicationController
   end
 
   def profile
-    response = HTTParty.get("https://congress.api.sunlightfoundation.com/legislators?apikey=0a104545f05a41bd9c7a93574c768e78&per_page=all")
+    response = HTTParty.get("https://congress.api.sunlightfoundation.com/legislators?apikey=0a104545f05a41bd9c7a93574c768e78&bioguide_id=#{params[:id]}")
     @results = response['results']
+    @twitter_id = @results[0]['twitter_id']
+    @tweets = get_tweets(@twitter_id)
+  end
+
+  def create
+    @member = Member.create(params[:id])
+    redirect_to @member
   end
 
 
@@ -24,9 +31,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:bioguide_id])
   end
 
-  def member_params
-    params.require(:member).permit(:first_name, :last_name, :twitter_id)
-  end
+
 
 end
 
