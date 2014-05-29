@@ -28,7 +28,7 @@ header.navigation {
   }
 
   .logo {
-    float: left;    
+    float: left;
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
@@ -68,7 +68,7 @@ header.navigation {
     }
   }
 
-  ul#navigation-menu {    
+  ul#navigation-menu {
     clear: both;
     -webkit-transform-style: preserve-3d; // stop webkit flicker
     display: none;
@@ -182,7 +182,7 @@ header.navigation {
     @include clearfix;
     display: block;
     padding-right: $navigation-padding;
-    padding-left: $navigation-padding;
+    padding-left: $navigation-padding/2;
     clear: both;
     background: #505050;
 
@@ -199,9 +199,32 @@ header.navigation {
     @include transition (all 0.2s ease-in-out);
     display: inline;
     background: $navigation-nav-button-background;
-    border-radius: $base-border-radius; 
+    border-radius: $base-border-radius;
     color: white;
-    font-size: .8em;  
+    font-size: .8em;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: .4em .5em;
+
+    @include media($large-screen) {
+      padding: .4em 1em;
+    }
+
+    &:hover {
+      background: lighten($navigation-nav-button-background, 10);
+    }
+  }
+
+  .session-btn {
+    margin-top: 13px;
+    float: right;
+    @include transition (all 0.2s ease-in-out);
+    display: inline-block;
+    background: $navigation-nav-button-background;
+    border: none;
+    border-radius: $base-border-radius;
+    color: white;
+    font-size: .8em;
     font-weight: 800;
     padding: .4em 1em;
     text-transform: uppercase;
@@ -211,12 +234,20 @@ header.navigation {
     }
   }
 
+  a.session-btn {
+
+  }
+
+  input.session-btn {
+
+  }
+
   .search-bar {
     $search-bar-border-color: $base-border-color;
     $search-bar-border: 1px solid $search-bar-border-color;
     $search-bar-background: lighten($search-bar-border-color, 10);
 
-    padding: 13px 5px; 
+    padding: 13px 5px;
     float: left;
     .search-and-submit {
       position: relative;
@@ -247,7 +278,7 @@ header.navigation {
 
     @include media($horizontal-bar-mode) {
       width: 16em;
-      position: relative; 
+      position: relative;
       display: inline-block;
 
       input {
