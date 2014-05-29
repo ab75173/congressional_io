@@ -1,34 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_self
- */
-
-@import "bourbon";
-@import "bitters/bitters";
-@import "neat";
-
-
-body {
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-/*
-*
-NAVIGATION : http://refills.bourbon.io/
-*
-*/
-
 header.navigation {
   $navigation-padding: 1em;
   $navigation-background: $dark-gray;
@@ -59,7 +28,7 @@ header.navigation {
   }
 
   .logo {
-    float: left;
+    float: left;    
     max-height: $navigation-height;
     padding-left: $navigation-padding;
     padding-right: 2em;
@@ -99,7 +68,7 @@ header.navigation {
     }
   }
 
-  ul#navigation-menu {
+  ul#navigation-menu {    
     clear: both;
     -webkit-transform-style: preserve-3d; // stop webkit flicker
     display: none;
@@ -213,7 +182,7 @@ header.navigation {
     @include clearfix;
     display: block;
     padding-right: $navigation-padding;
-    padding-left: $navigation-padding/2;
+    padding-left: $navigation-padding;
     clear: both;
     background: #505050;
 
@@ -230,16 +199,12 @@ header.navigation {
     @include transition (all 0.2s ease-in-out);
     display: inline;
     background: $navigation-nav-button-background;
-    border-radius: $base-border-radius;
+    border-radius: $base-border-radius; 
     color: white;
-    font-size: .8em;
+    font-size: .8em;  
     font-weight: 800;
+    padding: .4em 1em;
     text-transform: uppercase;
-    padding: .4em .5em;
-
-    @include media($large-screen) {
-      padding: .4em 1em;
-    }
 
     &:hover {
       background: lighten($navigation-nav-button-background, 10);
@@ -251,7 +216,7 @@ header.navigation {
     $search-bar-border: 1px solid $search-bar-border-color;
     $search-bar-background: lighten($search-bar-border-color, 10);
 
-    padding: 13px 5px;
+    padding: 13px 5px; 
     float: left;
     .search-and-submit {
       position: relative;
@@ -282,74 +247,12 @@ header.navigation {
 
     @include media($horizontal-bar-mode) {
       width: 16em;
-      position: relative;
+      position: relative; 
       display: inline-block;
 
       input {
         @include box-sizing(border-box);
         display: block;
-      }
-    }
-  }
-}
-
-/*
-*
-INDEX HERO : http://refills.bourbon.io/
-*
-*/
-
-.hero {
-  $hero-background: desaturate(darken($base-accent-color, 20), 30);
-  $hero-color: white;
-
-  background: url(https://raw.github.com/Magnus-G/Random/master/lake-transparent.png);
-  background-color: $hero-background;
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  padding-bottom: 4em;
-
-  .hero-logo img {
-    height: 3em;
-    margin-bottom: 1em;
-  }
-
-  .hero-inner {
-    @include outer-container;
-    @include clearfix;
-    padding: 3em;
-    margin: auto;
-    text-align: center;
-    color: $hero-color;
-
-    button {
-      @include button(simple, $base-accent-color);
-      font-size: $base-font-size;
-      outline: none;
-    }
-
-    .hero-copy {
-      text-align: center;
-
-      h1 {
-        font-size: 1.4em;
-        margin-bottom: .2em;
-
-        @include media($large-screen) {
-          font-size: 1.8em;
-        }
-      }
-
-      p {
-        margin: auto;
-        margin-bottom: 3em;
-        font-weight: 200;
-
-        @include media($large-screen) {
-          font-size: 1.2em;
-          max-width: 40%;
-        }
       }
     }
   }
