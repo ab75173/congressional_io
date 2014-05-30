@@ -5,19 +5,17 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li> |
-      <li><a href="/members">Members</a></li> |
-      <li><a href="/users">Users</a></li> |
-      <li><%= render 'common/signout' %></li>
-    </ul>
-  </nav>
+
+
+<%= render 'refills/navigation' %>
 
 
 <%= yield %>
+
+<%= render 'refills/footer' %>
 
 </body>
 </html>
