@@ -5,7 +5,7 @@ Link to ERD
 http://www.gliffy.com/go/publish/image/5797183/L.png
 
 Linnk to Heroku
-http://still-mesa-9144.herokuapp.com/
+http://congtweet.herokuapp.com/
 
 Project Overview
 This app asks users to login/create an account. Users can view member of congress and click on a member of congress to view the members' profile page. The profile page allows users to view the members' most recent tweets and allows users to be able to add members' to their favorites list.
